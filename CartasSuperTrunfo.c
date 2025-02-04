@@ -24,16 +24,16 @@ int main() {
     /*para evitar que as variáveis criadas passuam valores indesejados todas as variáveis serão declaradas já com um valor que
     será substituido durante o programa*/
     
-    char pais = 'A';
-    int cidade = 0, populacao = 0, pto_tur=0;      
-    float area = 0, PIB =0;            
+    char pais;
+    int cidade = 0, pto_tur=0;      
+    float area = 0, PIB =0, populacao = 0;       
 
 
     //Cabeçalho do terminal
-    printf("__________________________________________________________________________________________________________\n");
+    printf("_________________________________________________________________________________________________________\n");
     printf("//                              Desafio Super Trunfo - Novato                                           //\n");
     printf("//           Essa rotina coleta-rá os valores correspondentes de cada uma das cartas.                   //\n");
-    printf("__________________________________________________________________________________________________________\n\n");
+    printf("//______________________________________________________________________________________________________//\n\n");
 
     /* Para facilitar a utilização da rotina pelo operador, antes de cada variável será apresentada
     uma instrução do que se espera coletar*/
@@ -42,11 +42,11 @@ int main() {
     scanf("%c", &pais);
     printf("Para a identificação da cidade utilize uma valor entre 1-8: \n");
     scanf("%d", &cidade);
-    printf("Inserir o tamanho da população:\n");
-    scanf("%d", &populacao);
+    printf("Inserir o tamanho da população [mil de habitantes]:\n");
+    scanf("%f", &populacao);
     printf("Inserir o tamanho da área da cidade [km²]:\n");
     scanf("%f", &area);
-    printf("Inserir o PIB da cidade [R$]:\n");
+    printf("Inserir o PIB da cidade [milhões de R$]:\n");
     scanf("%f", &PIB);
     printf("Inserir o número de pontos turísticos da cidade:\n");
     scanf("%d", &pto_tur);
@@ -55,11 +55,12 @@ int main() {
 
     printf("\n__________________________________________________________________________________________________________\n\n");
     printf("Resumo das informações inseridas para cada carta:\n");
-    //printf("País/Cidade: %c"0"%d\n", pais, cidade[]);
-    printf("População: %d\n", populacao);
-    printf("Área [km²]: %f\n", area);
-    printf("PIB: %f\n", PIB);
-    printf("Número de pontos turísticos: %d\n", pto_tur);
-    
+    printf("País/Cidade: %c0%d\n", pais, cidade);
+    printf("População [mil de habitantes]: %.2f\n", populacao);
+    printf("Área [km²]: %.2f\n", area);
+    printf("PIB: %.2f\n", PIB);
+    printf("Número de pontos turísticos: %d\n\n", pto_tur);
+  
+
     return 0;
 }
