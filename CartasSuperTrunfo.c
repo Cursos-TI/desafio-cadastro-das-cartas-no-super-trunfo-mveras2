@@ -21,7 +21,7 @@ int main() {
 //_________________________________________________________________________________________________________________________
 
     //Declaração das variáveis
-    /*para evitar que as variáveis criadas passuam valores indesejados todas as variáveis serão declaradas já com um valor que
+    /*para evitar que as variáveis criadas passuam valores indesejados as variáveis serão declaradas já com um valor que
     será substituido durante o programa*/
     
     char pais;
@@ -40,7 +40,7 @@ int main() {
 
     printf("Para a identificação do País utilize uma letra de A-H: \n");
     scanf("%c", &pais);
-    printf("Para a identificação da cidade utilize uma valor entre 1-8: \n");
+    printf("Para a identificação da cidade utilize uma valor entre 1-4: \n");
     scanf("%d", &cidade);
     printf("Inserir o tamanho da população [mil de habitantes]:\n");
     scanf("%f", &populacao);
@@ -51,7 +51,7 @@ int main() {
     printf("Inserir o número de pontos turísticos da cidade:\n");
     scanf("%d", &pto_tur);
 
-    //Apresenta os valores inseridos
+    //Retorna os valores inseridos
 
     printf("\n__________________________________________________________________________________________________________\n\n");
     printf("Resumo das informações inseridas para cada carta:\n");
@@ -59,8 +59,8 @@ int main() {
     printf("População [mil de habitantes]: %.2f\n", populacao);
     printf("Área [km²]: %.2f\n", area);
     printf("PIB: %.2f\n", PIB);
-    printf("Número de pontos turísticos: %d\n\n", pto_tur);
-  
+    printf("Número de pontos turísticos: %d\n", pto_tur);
+    printf("\n__________________________________________________________________________________________________________\n\n"); 
 
     return 0;
 }
