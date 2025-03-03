@@ -44,8 +44,10 @@ int main() {
 
     //Cabeçalho do terminal
     printf("_________________________________________________________________________________________________________\n");
-    printf("//                              Desafio Super Trunfo - Novato                                           //\n");
-    printf("//           Essa rotina coleta-rá os valores correspondentes de cada uma das cartas.                   //\n");
+    printf("//                              Desafio Super Trunfo 1 - Mestre                                         //\n");
+    printf("//          Essa rotina coleta-rá os valores correspondentes de cada atributo de uma cartas             //\n");
+    printf("//                 e acrescenta-rá o cálculo da densidade populacional e do PIB-capta.                  //\n");
+    printf("//                    A rotina também faz a comparação dos atributos com uma segunda carta              //\n\n");
     printf("//______________________________________________________________________________________________________//\n\n");
 
     /* Para facilitar a utilização da rotina pelo operador, antes de cada variável será apresentada
@@ -55,60 +57,71 @@ int main() {
     scanf("%c", &pais);
     printf("Para a identificação da cidade utilize uma valor entre 1-4: \n");
     scanf("%d", &cidade);
-    printf("Inserir o tamanho da população [mil de habitantes]:\n");
+    printf("Inserir o tamanho da população [Habitantes]:\n");
     scanf("%f", &populacao);
     printf("Inserir o tamanho da área da cidade [km²]:\n");
     scanf("%f", &area);
-    printf("Inserir o PIB da cidade [milhões de R$]:\n");
+    printf("Inserir o PIB da cidade [Bilhões de R$]:\n");
     scanf("%f", &PIB);
     printf("Inserir o número de pontos turísticos da cidade:\n");
     scanf("%d", &pto_tur);
 
     //Cálculo da densidade populacional e o PIB per capta
 
-    den_pop = populacao / area;
-    pib_cap = PIB*1000 / populacao;
+    den_pop = (float) populacao / area;
+    pib_cap = (float) PIB*1000000000 / populacao;
 
     //valores para serem utilizados no comparador para o desafio nível mestre
-    den_pop1 = populacao1 / area1;
-    pib_cap1 = PIB1*1000 / populacao1;
-    
-    //Retorna os valores inseridos
+    den_pop1 = (float) populacao1 / area1;
+    pib_cap1 = (float) PIB1*1000000000 / populacao1;
+
+    //Cálculo do Super Poder
+
+    float sup_pder = 0, sup_pder1 = 0;
+
+    sup_pder = (float) populacao + area + PIB + pto_tur + (1/den_pop) + pib_cap;
+    sup_pder1 = (float) populacao1 + area1 + PIB1 + pto_tur1 + (1/den_pop1) + pib_cap1;
+
+    //Retorna os valores dos atributros inseridos pelo usuário
 
     printf("\n__________________________________________________________________________________________________________\n\n");
-    printf("Resumo das informações inseridas para cada carta:\n");
+    printf("Resumo dos atributos da carta inseridos pelo usuário :\n");
     printf("País/Cidade: %c0%d\n", pais, cidade);
-    printf("População [mil de habitantes]: %.2f\n", populacao);
+    printf("População [Habitantes]: %.0f\n", populacao);
     printf("Área [km²]: %.2f\n", area);
-    printf("PIB: %.2f\n", PIB);
+    printf("PIB [Bilhões de R$]: %.2f\n", PIB);
     printf("Número de pontos turísticos: %d\n", pto_tur);
-    printf("Densidade populacional [habitantes / km²]: %.2f\n", den_pop);
-    printf("PIB per Capta [R$ / habitantes]: %.2f\n", pib_cap);
+    printf("Densidade populacional [Habitantes / km²]: %.2f\n", den_pop);
+    printf("PIB per Capta [R$ / Habitantes]: %.2f\n", pib_cap);
+    printf("SUPER PODER: %.2f\n", sup_pder);
     printf("\n__________________________________________________________________________________________________________\n\n"); 
 
-//Retorna os valores da Cidade Referência
+    //Retorna os valores da Cidade Referência - pré programado
  
-    printf("Resumo das informações inseridas para a carta da Cidade de Referência:\n\n");
-    printf("População [mil de habitantes]: %.2f\n", populacao1);
+    printf("Resumo dos atributos da carta da Cidade de Referência:\n\n");
+    printf("População [Habitantes]: %.0f\n", populacao1);
     printf("Área [km²]: %.2f\n", area1);
-    printf("PIB: %.2f\n", PIB1);
+    printf("PIB[Bilhões de R$]: %.2f\n", PIB1);
     printf("Número de pontos turísticos: %d\n", pto_tur1);
     printf("Densidade populacional [habitantes / km²]: %.2f\n", den_pop1);
     printf("PIB per Capta [R$ / habitantes]: %.2f\n", pib_cap1);
+    printf("SUPER PODER: %.2f\n", sup_pder1);
     printf("\n__________________________________________________________________________________________________________\n\n"); 
 
 
-    printf("Comparativo entre as características inseridas e os valores da Cidade de Referência:\n");
-    printf("Se o valor da característica da cidade inserida for maior que o da \n");
+    //Apresenta o comparativo entre os atributos de cada carta
+
+    printf("Comparativo entre os atributosd das duas cartas:\n");
+    printf("Se o valor do atributo da cidade inserida pelo usuário for maior que o da \n");
     printf("cidade de referência será retornado o valor '1', caso contrário '0' \n\n");
     printf("População: %d\n", populacao > populacao1);
     printf("Área: %d\n", area > area1);
     printf("PIB: %d\n", PIB > PIB1);
     printf("Pontos turísticos: %d\n", pto_tur > pto_tur1);
-    printf("Densidade populacional: %d\n", den_pop > den_pop1);
-    printf("PIB per Capta: %d\n\n", pib_cap > pib_cap1);
+    printf("Densidade populacional: %d\n", den_pop < den_pop1);
+    printf("PIB per Capta: %d\n", pib_cap > pib_cap1);
+    printf("SUPER PODER: %.2f\n\n", sup_pder > sup_pder1);
     printf("\n__________________________________________________________________________________________________________\n\n"); 
-
 
 
     return 0;

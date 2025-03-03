@@ -32,8 +32,9 @@ int main() {
 
     //Cabeçalho do terminal
     printf("_________________________________________________________________________________________________________\n");
-    printf("//                              Desafio Super Trunfo - Novato                                           //\n");
-    printf("//           Essa rotina coleta-rá os valores correspondentes de cada uma das cartas.                   //\n");
+    printf("//                              Desafio Super Trunfo 1 - Avançado                                       //\n");
+    printf("//          Essa rotina coleta-rá os valores correspondentes de cada atributo de uma cartas             //\n");
+    printf("//                 e acrescenta-rá o cálculo da densidade populacional e do PIB-capta                   //\n");
     printf("//______________________________________________________________________________________________________//\n\n");
 
     /* Para facilitar a utilização da rotina pelo operador, antes de cada variável será apresentada
@@ -43,32 +44,32 @@ int main() {
     scanf("%c", &pais);
     printf("Para a identificação da cidade utilize uma valor entre 1-4: \n");
     scanf("%d", &cidade);
-    printf("Inserir o tamanho da população [mil de habitantes]:\n");
+    printf("Inserir o tamanho da população [Habitantes]:\n");
     scanf("%f", &populacao);
     printf("Inserir o tamanho da área da cidade [km²]:\n");
     scanf("%f", &area);
-    printf("Inserir o PIB da cidade [milhões de R$]:\n");
+    printf("Inserir o PIB da cidade [bilhões de R$]:\n");
     scanf("%f", &PIB);
     printf("Inserir o número de pontos turísticos da cidade:\n");
     scanf("%d", &pto_tur);
 
     //Cálculo da densidade populacional e o PIB per capta
 
-    den_pop = populacao / area;
-    pib_cap = PIB*1000 / populacao;
+    den_pop = (float) populacao / area;
+    pib_cap = (float) PIB*1000000000 / populacao;
     
     //Retorna os valores inseridos
 
     printf("\n__________________________________________________________________________________________________________\n\n");
-    printf("Resumo das informações inseridas para cada carta:\n");
+    printf("Resumo dos atributos da carta:\n");
     printf("País/Cidade: %c0%d\n", pais, cidade);
-    printf("População [mil de habitantes]: %.2f\n", populacao);
+    printf("População [mil de habitantes]: %.0f\n", populacao);
     printf("Área [km²]: %.2f\n", area);
     printf("PIB: %.2f\n", PIB);
     printf("Número de pontos turísticos: %d\n", pto_tur);
     //apresentação das variáveis do nível aventureiro
-    printf("Densidade populacional [habitantes / km²]: %.2f\n", den_pop);
-    printf("PIB per Capta [R$ / habitantes]: %.2f\n", pib_cap);
+    printf("Densidade populacional [Habitantes / km²]: %.2f\n", den_pop);
+    printf("PIB per Capta [R$ / Habitantes]: %.2f\n", pib_cap);
     printf("\n__________________________________________________________________________________________________________\n\n"); 
 
     return 0;
